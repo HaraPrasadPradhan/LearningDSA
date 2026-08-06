@@ -20,15 +20,21 @@ public class Array_Operations {
         //replaceFirstElement(arr, size, value);
         // insertAtBeginning(arr, size, value);
         // deleteFirstElement(arr, size);
-        replaceElementAtPosition(arr, size, pos, value);
+        // replaceElementAtPosition(arr, size, pos, value);
+        // insertElementAtPosition(arr, size, pos, value);
+        // deleteLastElement(arr, size);
+        deleteElementAtPosition(arr, size, pos);
         sc.close();
     }
+
+    
     //Simple array traversal function.
     static void traverseArray( int arr[], int size) {
         for(int i = 0; i < size; i++) {
             System.out.print(arr[i] + " ");
         }
     }
+
 
     //Replace the element at the beginning of the array.
     static void replaceFirstElement(int arr[], int size, int newElement) {
@@ -41,6 +47,7 @@ public class Array_Operations {
             System.out.print(arr[i] + " ");
         }
     }
+
 
     //Insert the element at the beginning of the array without and keep the rest of the element on order.
     static void insertAtBeginning(int arr[], int size, int newElement) {
@@ -57,6 +64,7 @@ public class Array_Operations {
         }
     }
 
+
     // Replace the element at specific position of the array.
     static void replaceElementAtPosition(int arr[], int size, int position, int newElement) {
         if(size <= 0) {
@@ -71,12 +79,61 @@ public class Array_Operations {
         }
     }
 
+
+    //Insert the element at specific position of the array and keep the rest of the element on order.
+    static void insertElementAtPosition(int arr[], int size, int position, int newElement) {
+        if(size <= 0) {
+            System.out.println("Array is empty.");
+        } else if(position < 0 || position >= size) {
+            System.out.println("Position is incorrect.");
+        } else {
+            for(int i = size - 1; i >= position + 1; i--) {
+                arr[i] = arr[i - 1];
+            }
+            arr[position] = newElement;
+        }
+        for(int i = 0; i < size; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+
     //Delete the first element of the array.
     static void deleteFirstElement(int arr[], int size) {
         if(size < 0) {
             System.out.println("Array is empty.");
         } else {
             for(int i = 0; i < arr.length - 1; i++) {
+                arr[i] = arr[i + 1];
+            }
+            arr[arr.length - 1] = 0;
+        }
+        for(int i = 0; i < size; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+
+    //Delete the last element of the array.
+    static void deleteLastElement(int arr[], int size) {
+        if(size < 0) {
+            System.out.println("Array is empty.");
+        }
+        arr[arr.length - 1] = 0;
+        for(int i = 0; i < size; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+
+    //Delete the element at specific position of the array.
+    static void deleteElementAtPosition(int arr[], int size, int position) {
+        if(size < 0) {
+            System.out.println("Array is empty.");
+        } else if(position < 0 || position >= size) {
+            System.out.println("Position is incorrect.");
+        } else {
+            for(int i = position; i < arr.length - 1; i++) {
                 arr[i] = arr[i + 1];
             }
             arr[arr.length - 1] = 0;
