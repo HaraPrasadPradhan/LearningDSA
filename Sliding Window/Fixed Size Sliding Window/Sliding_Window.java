@@ -33,8 +33,6 @@ public class Sliding_Window {
                 max = sum;
             }
         }
-        // return max;
         System.out.println("Maximum sum of the subarray of width:" + max);
     }
-    // return max;
 }
