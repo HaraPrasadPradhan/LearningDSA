@@ -12,6 +12,7 @@ public class Linear_Search {
 
 
         linearSearch(arr, item);
+        sc.close();
     }
 
     static int linearSearch(int arr[], int item) {
