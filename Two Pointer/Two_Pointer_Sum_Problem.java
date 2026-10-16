@@ -1,3 +1,4 @@
+// Array should be sorted.
 import java.util.*;
 
 public class Two_Pointer_Sum_Problem {

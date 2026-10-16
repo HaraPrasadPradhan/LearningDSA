@@ -11,5 +11,6 @@ public class Array_Iteration {
         for( int iteration : arr) {
             System.out.println(iteration);
         }
+        sc.close();
     }
 }

@@ -21,5 +21,6 @@ class Array_Traverse {
             }
             System.out.println();
         }
+        sc.close();
     }
 }
