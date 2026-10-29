@@ -14,13 +14,18 @@ public class Linked_List_Deletion {
 
     public static void main(String[] args) {
         Linked_List_Deletion list = new Linked_List_Deletion();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the position of the node to delete: ");
+        int position = sc.nextInt();
         list.insertAtFirst("Hello Hello");
         list.insertAtLast("Test test");
         list.insertAtLast("Test test 2");
         list.insertAtLast("Test test 4");
         list.printList();
-        list.deletionAtFirst();
-        list.deletionAtLast();
+        list.deletionAtSpecificPosition(position);
+        // list.printList();
+        // list.deletionAtFirst();
+        // list.deletionAtLast();
         list.printList();
     }
     public void insertAtFirst(String data) {
@@ -93,5 +98,25 @@ public class Linked_List_Deletion {
             secondLastNode = secondLastNode.next;
         }
         secondLastNode.next = null;
+    }
+
+
+
+
+    // Deletion of a node from a given position
+    public void deletionAtSpecificPosition(int position) {
+        if(head.next == null) {
+            System.out.println("Linked List is Empty");
+            return;
+        }
+
+        Node previousNode = head;
+        Node givenNode = head.next;
+
+        for(int i = 1; i < position - 1; i++) {
+            givenNode = givenNode.next;
+            previousNode = previousNode.next;
+        }
+        previousNode.next = givenNode.next;
     }
 }
