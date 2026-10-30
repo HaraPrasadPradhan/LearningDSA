@@ -27,6 +27,8 @@ public class Linked_List_Deletion {
         // list.deletionAtFirst();
         // list.deletionAtLast();
         list.printList();
+        list.deletionEntireList();
+        list.printList();
     }
     public void insertAtFirst(String data) {
         Node newNode = new Node(data);
@@ -118,5 +120,18 @@ public class Linked_List_Deletion {
             previousNode = previousNode.next;
         }
         previousNode.next = givenNode.next;
+    }
+
+
+    // Deletion of an entire linked list
+    public void deletionEntireList() {
+        // head = null;
+        Node currentNode = head;
+        while(currentNode != null) {
+            Node newNode = currentNode.next;
+            currentNode.next = null;
+            currentNode = newNode;
+        }
+        head = null;
     }
 }
