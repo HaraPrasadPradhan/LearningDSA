@@ -78,6 +78,11 @@ public class Linked_List_Deletion {
             System.out.print("Linked List is empty");
             return;
         }
+        if(head.next == null) {
+            head = null;
+            // System.out.print("Linked List is empty");
+            return;
+        }
         head = head.next;
     }
 
