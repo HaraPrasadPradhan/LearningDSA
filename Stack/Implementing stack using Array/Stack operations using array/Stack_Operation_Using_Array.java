@@ -55,10 +55,16 @@ public class Stack_Operation_Using_Array {
     }
     // isEmpty Opeartion
     public boolean isEmpty() {
+        if(top == -1) {
+            System.out.println("Stack Underflow");
+        }
         return top == -1;
     }
     // isFull Operation
     public boolean isFull() {
+        if(top == capacity - 1) {
+            System.out.println("Stack Overflow");
+        }
         return top == capacity - 1;
     }
 }
